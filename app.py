@@ -103,6 +103,7 @@ if st.button("Predict"):
 
     st.markdown('Car Price is going to be: Ksh: '+ str(car_price[0]))
 
+def app()        
     st.balloons()
     st.title('Contact Us')
     st.markdown('''### Name:
