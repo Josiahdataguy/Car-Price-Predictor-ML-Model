@@ -16,41 +16,6 @@ st.text("""
         """
     )
 
-def app(cars_data):
-    # Give title
-    st.title("View Data")
-
-    # Create expander to show dataset data.
-    with st.beta_expander("View Data"):
-        st.table(cars_data)
-    
-    # Create a section to show info about dataset.
-    st.header("Columns Summary:")
-
-    # Show the describtion of dataset.
-    if st.checkbox("Show Summary"):
-        st.table(cars_data.describe())
-
-    # Creat a row with three columns to show info about columns.
-    beta_col1, beta_col2, beta_col3 = st.beta_columns(3)
-
-    # Add checkbox to show the columns name
-    with beta_col1:
-        if st.checkbox("Show columns name"):
-            st.table(cars_data.columns)
-
-    # Add checkbox to show the columns datatype
-    with beta_col2:
-        if st.checkbox("View columns datatype"):
-            dtypes_df = cars_data.dtypes.apply(lambda x: x.name)
-            st.table(dtypes_df)
-
-    # Add checkbox to show the columns data.
-    with beta_col3:
-        if st.checkbox("View column data"):
-            column_data = st.selectbox("Select column", tuple(cars_data.columns))
-            st.write(cars_data[column_data])
-
 def get_brand_name(car_name):
     car_name = car_name.split(' ')[0]
     return car_name.strip()
@@ -102,12 +67,3 @@ if st.button("Predict"):
     car_price = model.predict(input_data_model)
 
     st.markdown('Car Price is going to be: Ksh: '+ str(car_price[0]))
-
-def app():        
-    st.balloons()
-    st.title('Contact Us')
-    st.markdown('''### Name:
-    Shishir Shekhar''')
-    st.markdown('''### Email:
-    sspdav02@gmail.com''')
-    st.markdown('''### GitHub: [ShishirShekhar](https://github.com/ShishirShekhar/)''')
