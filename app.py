@@ -23,7 +23,8 @@ def clean_data(value):
 
 
 name = st.selectbox('Select Car Brand', cars_data['name'].unique())
-year = st.slider('Car Manufacturer Year', 1994,2024)
+year = st.text_input('Car Manufacturer Year (e.g., 2024):')
+year_cleaned = clean_data(year)
 km_driven = st.text_input('NO of kms Driven (e.g., 45,000 km):')
 km_driven_cleaned = clean_data(km_driven)
 fuel = st.selectbox('Fuel type', cars_data['fuel'].unique())
