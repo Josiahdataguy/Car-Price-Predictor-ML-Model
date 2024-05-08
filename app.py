@@ -102,3 +102,11 @@ if st.button("Predict"):
     car_price = model.predict(input_data_model)
 
     st.markdown('Car Price is going to be: Ksh: '+ str(car_price[0]))
+
+ st.balloons()
+    st.title('Contact Us')
+    st.markdown('''### Name:
+    Shishir Shekhar''')
+    st.markdown('''### Email:
+    sspdav02@gmail.com''')
+    st.markdown('''### GitHub: [ShishirShekhar](https://github.com/ShishirShekhar/)''')
