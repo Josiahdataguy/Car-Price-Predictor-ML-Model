@@ -16,7 +16,7 @@ st.text("""
         """
     )
 
-def app(df):
+def app():
     # Give title
     st.title("View Data")
 
