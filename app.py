@@ -49,7 +49,7 @@ def app(cars_data):
     with beta_col3:
         if st.checkbox("View column data"):
             column_data = st.selectbox("Select column", tuple(cars_data.columns))
-            st.write(df[column_data])
+            st.write(cars_data[column_data])
 
 def get_brand_name(car_name):
     car_name = car_name.split(' ')[0]
