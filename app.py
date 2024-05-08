@@ -16,20 +16,20 @@ st.text("""
         """
     )
 
-def app():
+def app(cars_data):
     # Give title
     st.title("View Data")
 
     # Create expander to show dataset data.
     with st.beta_expander("View Data"):
-        st.table(df)
+        st.table(cars_data)
     
     # Create a section to show info about dataset.
     st.header("Columns Summary:")
 
     # Show the describtion of dataset.
     if st.checkbox("Show Summary"):
-        st.table(df.describe())
+        st.table(cars_data.describe())
 
     # Creat a row with three columns to show info about columns.
     beta_col1, beta_col2, beta_col3 = st.beta_columns(3)
@@ -37,18 +37,18 @@ def app():
     # Add checkbox to show the columns name
     with beta_col1:
         if st.checkbox("Show columns name"):
-            st.table(df.columns)
+            st.table(cars_data.columns)
 
     # Add checkbox to show the columns datatype
     with beta_col2:
         if st.checkbox("View columns datatype"):
-            dtypes_df = df.dtypes.apply(lambda x: x.name)
+            dtypes_df = cars_data.dtypes.apply(lambda x: x.name)
             st.table(dtypes_df)
 
     # Add checkbox to show the columns data.
     with beta_col3:
         if st.checkbox("View column data"):
-            column_data = st.selectbox("Select column", tuple(df.columns))
+            column_data = st.selectbox("Select column", tuple(cars_data.columns))
             st.write(df[column_data])
 
 def get_brand_name(car_name):
