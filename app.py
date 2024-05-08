@@ -14,7 +14,6 @@ st.text("""
         engine size, horse power, dimensions and the drive wheel type parameters.
         """
     )
- st.title("View Data")
 
     # Create expander to show dataset data.
     with st.beta_expander("View Data"):
