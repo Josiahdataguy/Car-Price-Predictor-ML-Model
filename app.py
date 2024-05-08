@@ -10,8 +10,8 @@ st.header('Car Price Prediction Machine Learning Model')
 cars_data = pd.read_csv('Cardetails.csv')
 
 st.text("""
-        This web app allows a user to predict the prices of a car based on their 
-        engine size, horse power, dimensions and the drive wheel type parameters.
+        This web app allows a user to predict the prices of a car based on their manufacture year, No of kilometers driven, fuel type, transmission, seller type, mileage, number of seats, 
+        engine size and horse power parameters.
         """
     )
 
