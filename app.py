@@ -8,6 +8,13 @@ model = pk.load(open('model.pkl', 'rb'))
 st.header('Car Price Prediction Machine Learning Model')
 
 cars_data = pd.read_csv('Cardetails.csv')
+def app():
+    st.text(
+        """
+        This web app allows a user to predict the prices of a car based on their 
+        engine size, horse power, dimensions and the drive wheel type parameters.
+        """
+    )
 
 def get_brand_name(car_name):
     car_name = car_name.split(' ')[0]
