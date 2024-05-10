@@ -5,7 +5,7 @@ import streamlit as st
 
 model = pk.load(open('model.pkl', 'rb'))
 
-st.header('**CAR PRICE PREDICTION MACHINE LEARNING MODEL**')
+st.header('Car Price Prediction Machine Learning Model')
 
 cars_data = pd.read_csv('Cardetails.csv')
 
@@ -29,22 +29,22 @@ def clean_data(value):
     return float(value)
 
 
-name = st.selectbox('Select Car Brand', cars_data['name'].unique())
-year = st.text_input('Car Manufacturer Year (e.g., 2024):')
+name = st.selectbox('**Select Car Brand**', cars_data['name'].unique())
+year = st.text_input('**Car Manufacturer Year (e.g., 2024):**')
 year_cleaned = clean_data(year)
-km_driven = st.text_input('NO of kms Driven (e.g., 45,000 km):')
+km_driven = st.text_input('**NO of kms Driven (e.g., 45,000 km)**:')
 km_driven_cleaned = clean_data(km_driven)
-fuel = st.selectbox('Fuel type', cars_data['fuel'].unique())
-seller_type = st.selectbox('Seller type', cars_data['seller_type'].unique())
-transmission = st.selectbox('Transmission', cars_data['transmission'].unique())
-owner = st.selectbox('Owner', cars_data['owner'].unique())
-mileage = st.text_input('Mileage (e.g., 21.14 kmpl):')
+fuel = st.selectbox('**Fuel type**', cars_data['fuel'].unique())
+seller_type = st.selectbox('**Seller type**', cars_data['seller_type'].unique())
+transmission = st.selectbox('**Transmission**', cars_data['transmission'].unique())
+owner = st.selectbox('**Owner**', cars_data['owner'].unique())
+mileage = st.text_input('**Mileage (e.g., 21.14 kmpl):**')
 mileage_cleaned = clean_data(mileage)
-engine = st.text_input('Engine (e.g., 1000 cc):')
+engine = st.text_input('**Engine (e.g., 1000 cc):**')
 engine_cleaned = clean_data(engine) 
-max_power = st.text_input('Max_power (e.g., 100 bhp):')
+max_power = st.text_input('**Max_power (e.g., 100 bhp):**')
 max_power_cleaned = clean_data(max_power) 
-seats = st.selectbox('Seats', cars_data['seats'].unique())
+seats = st.selectbox('**Seats**', cars_data['seats'].unique())
 
 if st.button("Predict"):
     input_data_model = pd.DataFrame(
@@ -67,6 +67,6 @@ if st.button("Predict"):
     car_price = model.predict(input_data_model)
 
     rounded_price = round(car_price[0])
-    st.markdown('**CAR PRICE IS GOING TO BE KSH:  '+ str(rounded_price) + '**')
+    st.markdown('**CAR PRICE IS GOING TO BE KSH: '+ str(rounded_price) + '**')
 
 
