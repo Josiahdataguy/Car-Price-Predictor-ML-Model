@@ -66,5 +66,5 @@ if st.button("Predict"):
 
     car_price = model.predict(input_data_model)
 
-   st.markdown('**CAR PRICE IS GOING TO BE KSH: '+ str(car_price[0]) + '**')
+    st.markdown('**CAR PRICE IS GOING TO BE KSH: '+ str(car_price[0]) + '**')
 
