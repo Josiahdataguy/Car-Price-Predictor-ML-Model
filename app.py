@@ -10,9 +10,9 @@ st.header('**CAR PRICE PREDICTION MACHINE LEARNING MODEL**')
 cars_data = pd.read_csv('Cardetails.csv')
 
 st.text("""
-        **This web app allows a user to predict the prices of a car based on their 
+        This web app allows a user to predict the prices of a car based on their 
         manufacturer year, number of kilometers driven, fuel type, transmission,
-        seller type, mileage,number of seats, engine size and horse power parameters.**
+        seller type, mileage,number of seats, engine size and horse power parameters.
         """
     )
 
